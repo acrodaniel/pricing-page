@@ -1,0 +1,11 @@
+{
+  "name": "cloud-softphone-calculator",
+  "version": "1.0.0",
+  "description": "Cloud Softphone Pricing Calculator",
+  "scripts": {
+    "start": "npx serve"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+} 

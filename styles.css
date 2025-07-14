@@ -1,0 +1,418 @@
+:root {
+    --body-bg: #f4f7fa;
+    --accent: #1e73be;
+    --text: #333;
+    --border: #ddd;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.pricing-calculator {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Plan Selection Cards */
+.plan-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.plan-card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 16px 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 130px;
+}
+
+.plan-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card.active {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(30, 115, 190, 0.15);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.85em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.plan-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 16px 0 8px;
+}
+
+.plan-icon {
+    font-size: 1.6em;
+}
+
+.plan-card h3 {
+    font-size: 1.2em;
+    line-height: 1.2;
+    color: var(--text);
+    font-weight: 600;
+    margin: 0;
+}
+
+.plan-description {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0 12px;
+}
+
+/* Calculator Grid */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Inputs Section */
+.calculator-inputs {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.input-group {
+    margin-bottom: 30px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* App Type Dropdown */
+.app-type-selector {
+    margin-bottom: 30px;
+}
+
+.app-type-dropdown {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.app-type-dropdown:focus {
+    outline: 3px solid rgba(30, 115, 190, 0.5);
+    border-color: var(--accent);
+}
+
+/* Addons Section */
+.addons-section {
+    margin-top: 30px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.checkbox-group label:hover {
+    background-color: var(--body-bg);
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 4px;
+}
+
+.addon-content {
+    flex: 1;
+}
+
+.addon-name {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.price-info {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Summary Card */
+.price-summary {
+    position: sticky;
+    top: 20px;
+}
+
+.summary-image {
+    margin-bottom: 24px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-emoji {
+    font-size: 4em;
+    color: var(--accent);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card {
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.summary-card h3 {
+    margin-bottom: 24px;
+}
+
+.summary-section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-section:last-of-type {
+    margin-bottom: 32px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.setup-total {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--accent);
+}
+
+.summary-item.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 15px;
+}
+
+.summary-item.ongoing {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #2ecc71;
+    border-bottom: none;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #1859a9;
+}
+
+.cta-button:focus {
+    outline: 3px solid rgba(30, 115, 190, 0.5);
+    outline-offset: 2px;
+}
+
+/* What's Included Section */
+.whats-included {
+    margin-top: 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.whats-included h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--accent);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.package-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--body-bg);
+}
+
+.package-card h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.package-price {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.package-card ul {
+    list-style: none;
+}
+
+.package-card li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.package-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Pricing Tip */
+.pricing-tip {
+    margin-top: 30px;
+    padding: 25px;
+    background: #fff7e6;
+    border-radius: 10px;
+    border: 1px solid #ffd699;
+}
+
+.pricing-tip h3 {
+    color: #995c00;
+    margin-bottom: 10px;
+}
+
+.pricing-tip p {
+    color: #663d00;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .package-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-summary {
+        position: static;
+    }
+
+    .summary-card {
+        position: sticky;
+        bottom: 0;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+} 

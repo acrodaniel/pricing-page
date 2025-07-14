@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Softphone Pricing Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pricing-calculator">
+        <h1>📊 Calculate Your Costs</h1>
+        <p class="subtitle">Transparent pricing, no hidden fees.</p>
+
+        <!-- Plan Selection Cards -->
+        <div class="plan-cards">
+            <div class="plan-card" data-plan="full">
+                <div class="plan-badge">Generic</div>
+                <div class="plan-header">
+                    <div class="plan-icon">📱</div>
+                    <h3>Cloud Softphone branded app</h3>
+                </div>
+                <p class="plan-description">Generic application for those getting started</p>
+            </div>
+            <div class="plan-card active" data-plan="white-label">
+                <div class="plan-badge">Branded</div>
+                <div class="plan-header">
+                    <div class="plan-icon">⭐</div>
+                    <h3>Custom branded softphone app</h3>
+                </div>
+                <p class="plan-description">Full custom branding with 300+ customization options</p>
+            </div>
+        </div>
+
+        <div class="calculator-grid">
+            <!-- Left Column: Inputs -->
+            <div class="calculator-inputs">
+                <div class="input-group">
+                    <label for="active-users">Monthly Active Users</label>
+                    <input type="number" id="active-users" min="1" value="100">
+                </div>
+
+                <div class="app-type-selector">
+                    <h3>App Type</h3>
+                    <select id="app-type" class="app-type-dropdown">
+                        <option value="mobile">Mobile Only — $0.12/user</option>
+                        <option value="desktop">Desktop Only — $0.66/user</option>
+                        <option value="both" selected>Mobile + Desktop — $0.78/user</option>
+                    </select>
+                </div>
+
+                <div class="addons-section">
+                    <h3>Add-on Features</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="customButtons">
+                            <div class="addon-content">
+                                <span class="addon-name">Custom Buttons on Call Screen</span>
+                                <span class="price-info">Setup: $239 | Monthly: $59 | Per User: $0.18</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="fullService">
+                            <div class="addon-content">
+                                <span class="addon-name">Full-Service (App Store Assist)</span>
+                                <span class="price-info">Setup: $719 | Monthly: $59</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="videoConferencing">
+                            <div class="addon-content">
+                                <span class="addon-name">Video Conferencing</span>
+                                <span class="price-info">Setup: $499 | Monthly: $299 | Per User: $9.50</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="messagingPlatform">
+                            <div class="addon-content">
+                                <span class="addon-name">Messaging Platform</span>
+                                <span class="price-info">Setup: $999 | Monthly: $389 | Per User: $1.80</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="advancedWebview">
+                            <div class="addon-content">
+                                <span class="addon-name">Advanced WebView</span>
+                                <span class="price-info">Monthly: $199 | Per User: $0.10</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary -->
+            <div class="price-summary">
+                <div class="summary-image">
+                    <div class="placeholder-emoji">📱✨</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Price Summary</h3>
+                    
+                    <!-- One-time costs section -->
+                    <div class="summary-section">
+                        <div class="summary-item setup-total">
+                            <span>Total One-time Cost</span>
+                            <span id="total-setup">$3,838.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Monthly costs section -->
+                    <div class="summary-section">
+                        <div class="summary-item">
+                            <span>Monthly Fixed Cost</span>
+                            <span id="monthly-fixed">$549</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Usage Cost (100 users)</span>
+                            <span id="usage-cost">$78.00</span>
+                        </div>
+                        <div class="summary-item ongoing">
+                            <span>Monthly Cost Going Forward</span>
+                            <span id="ongoing-monthly">$627.00</span>
+                        </div>
+                    </div>
+                    
+                    <button class="cta-button">🚀 Start Free Trial</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- What's Included Section -->
+        <div class="whats-included">
+            <h2>📦 What's Included in Each Package</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <h3>Base White Label Package</h3>
+                    <p class="package-price">$719 one-time setup</p>
+                    <ul>
+                        <li>iOS & Android test apps (4-min call limit)</li>
+                        <li>Custom branding & themes</li>
+                        <li>All core VoIP features</li>
+                        <li>Push notifications included</li>
+                    </ul>
+                </div>
+                <div class="package-card">
+                    <h3>Production Builds</h3>
+                    <p class="package-price">$3,119 setup + $549/month</p>
+                    <ul>
+                        <li>Remove call limits & warnings</li>
+                        <li>App Store & Google Play ready</li>
+                        <li>Professional distribution</li>
+                        <li>Cannot be disabled once enabled</li>
+                    </ul>
+                </div>
+                <div class="package-card">
+                    <h3>Usage-Based Pricing</h3>
+                    <p class="package-price">Per active user per month:</p>
+                    <ul>
+                        <li>Mobile apps: $0.12</li>
+                        <li>Desktop apps: $0.66</li>
+                        <li>Only pay for active users</li>
+                        <li>Scales with your business</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Tip -->
+        <div class="pricing-tip">
+            <h3>💡 Pricing Tip</h3>
+            <p>Start with test builds to validate your concept, then upgrade to production when ready to launch. The usage-based model means you only pay for actual users, helping you scale efficiently.</p>
+        </div>
+    </div>
+    <script src="pricingData.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html> 
